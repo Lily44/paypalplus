@@ -90,11 +90,11 @@
                     <input type="hidden" name="plugin_action" value="update" />
 				<button type="submit" style="float: left;"><?php _e('Upgrade to new version!', 'paypalplus');?></button>
             </form>
-		<? } ?>
-<? $path = str_replace(osc_plugins_path(), 'paypalplus', $path); echo $path;?>
+		<?php } ?>
+<?php $path = str_replace(osc_plugins_path(), 'paypalplus', $path); echo $path;?>
 <div id="settings_form" style="border: 1px solid #ccc; background: #eee;  ">
     <div style="padding: 20px;">
-        <h2> <? echo _e('Paypal+ Options', 'paypalplus'); ?> </h2> 
+        <h2> <?php echo _e('Paypal+ Options', 'paypalplus'); ?> </h2> 
        		<div style="float: left; width: 100%;">
             <fieldset style=" border: 1px solid #BBBBBB; border-radius: 3px 3px 3px 3px; margin: 10px; margin: 10px;">
                 <legend><strong><?php _e('Paypal Account', 'paypalplus'); ?></strong></legend>
