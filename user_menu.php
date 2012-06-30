@@ -38,13 +38,13 @@
                   <h2><?php _e('Paypal & your items', 'paypalplus'); ?></h2>
                   <h2><?php echo sprintf(__('Your current credit is %.2f %s', 'paypalplus'), $amount, osc_get_preference('currency', 'paypalplus')); ?></h2>
                    
-                  <? if ($bonusamount>'0')  { ?>
+                  <?php if ($bonusamount>'0')  { ?>
 					<h2 style="color:#060"> <?php echo sprintf(__('Your current Bonus credit is %.2f %s', 'paypalplus'), $bonusamount, osc_get_preference('currency', 'paypalplus'));
 						if ($diff>'0')
 						 	echo ' '.sprintf(__('maturing in %d days', 'paypalplus'), $diff);
 						?>
                     </h2>
-                  <? } ?>
+                  <?php } ?>
                     
 				  <?php if(osc_count_items() == 0) { ?>
                         <h3><?php _e('You don\'t have any items yet', 'paypalplus'); ?></h3>
@@ -59,7 +59,7 @@
                                <?php _e('Price', 'paypalplus') ; ?>: <?php echo osc_format_price(osc_item_price()); ?>
                                </p>
                                <p class="options">
-                               <? if(osc_item_is_active()=='1') { ?>   
+                               <?php if(osc_item_is_active()=='1') { ?>   
 										
 								   <?php if(osc_get_preference("pay_per_post", "paypalplus")=="1") { ?>
                                    	  <?php if(paypalplus_is_paid(osc_item_id())) { ?>
@@ -72,7 +72,7 @@
                                    	    <span>|</span>
                                    <?php } ?>
                                             	
-                                   <? if (( paypalplus_item_is_enabled()=='1') || (osc_get_preference("auto_enable", "paypalplus")=="1"))  { ?>
+                                   <?php if (( paypalplus_item_is_enabled()=='1') || (osc_get_preference("auto_enable", "paypalplus")=="1"))  { ?>
                                                 
 										<?php if(osc_get_preference("allow_premium", "paypalplus")=="1") { ?>
                                         	<?php if(paypalplus_is_premium(osc_item_id())) { ?> 
@@ -95,14 +95,14 @@
                                             <?php } ?>
 										<?php } ?>
                                             
-                                  <? }  //this item is not enabled yet
+                                  <?php }  //this item is not enabled yet
 									else { ?>
-											<strong><? echo _e('This item is not enabled yet!','paypalplus');  ?> </strong>
-                       				<? } ?>
-								<? }   //this item is inactive -->
+											<strong><?php echo _e('This item is not enabled yet!','paypalplus');  ?> </strong>
+                       				<?php } ?>
+								<?php }   //this item is inactive -->
                                     else  { ?>
                                     	   	<strong><? echo _e('This item is inactive!','paypalplus');  ?> </strong>
-                                       <? } ?>
+                                       <?php } ?>
                                        </p>
                                    <br />
                                 </div>
