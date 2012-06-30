@@ -56,9 +56,9 @@ $paypal_log = $conn->osc_dbFetchResults("SELECT * FROM %st_paypal_log", DB_TABLE
                         ?>
                     </td>
                 </tr>
-    <?php
-}
-?>
+            <?php
+            }
+            ?>
         </tbody>
     </table>
 </div>
