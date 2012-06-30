@@ -7,11 +7,11 @@ $paypal_log = $conn->osc_dbFetchResults("SELECT * FROM %st_paypal_publish where 
         <script type="text/javascript" src="<?php echo osc_current_admin_theme_js_url('datatables.pagination.js') ; ?>"></script>
         <script type="text/javascript" src="<?php echo osc_current_admin_theme_js_url('datatables.extend.js') ; ?>"></script>
 <div class="dataTables_wrapper">
-                    <? if (osc_version() < '240') {?>
+                    <?php if (osc_version() < '240') {?>
                     <table cellpadding="0" cellspacing="0" border="0" class="display" id="datatables_list">
-                   <? echo osc_version(); } else {?>
+                   <?php echo osc_version(); } else {?>
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="datatables_list">
-                    <? } ?>                          <thead>
+                    <?php } ?>                          <thead>
                             <tr>
                                 <th class="sorting"><?php _e('ID', 'paypalplus'); ?></th>
                                 <th class="sorting"><?php _e('Date', 'paypalplus'); ?></th>
