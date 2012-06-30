@@ -123,8 +123,6 @@
                         <tr> 						 
                         	<td width="150px"><label><?php _e('Paypal email', 'paypalplus'); ?></label></td><td><input type="text" name="email" id="email" value="<?php echo osc_get_preference('email', 'paypalplus'); ?>" />
                         <br/>
-                        <?php /*<label><?php _e('PDT', 'paypal'); ?></label><input type="text" name="pdt" id="pdt" value="<?php echo osc_get_preference('pdt', 'paypal'); ?>" />
-                        <br/> */ ?>
                         	</td>
                         </tr>
                      </table>
