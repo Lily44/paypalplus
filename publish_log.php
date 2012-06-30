@@ -27,13 +27,14 @@ $paypal_log = $conn->osc_dbFetchResults("SELECT * FROM %st_paypal_publish where 
                     $odd = 1;
                 }
                 ?>
-
                 <tr class="<?php echo $odd_even; ?>">
                     <td><?php echo $logs['fk_i_item_id']; ?></td>
                     <td><?php echo osc_format_date($logs['dt_date']); ?></td>
                     <td><?php echo $logs['fk_i_paypal_id']; ?></td>
                 </tr>
-            <?php } ?>
+                <?php
+            }
+            ?>
         </tbody>
     </table>
 </div>
