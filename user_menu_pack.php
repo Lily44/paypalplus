@@ -46,23 +46,23 @@
                 <div id="main">
                     <h2><?php echo sprintf(__('Credit packs. Your current credit is %.2f %s', 'paypalplus'), $amount, osc_get_preference('currency', 'paypalplus')); ?></h2>
                    
-                    <? if ($bonusamount>'0')  { ?>
+                    <?php if ($bonusamount>'0')  { ?>
 						<h2 style="color:#060"> <?php echo sprintf(__('Your current Bonus credit is %.2f %s', 'paypalplus'), $bonusamount, osc_get_preference('currency', 'paypalplus'));
 						if ($diff>'0')
 						 	echo ' '.sprintf(__('maturing in %d days', 'paypalplus'), $diff);
 						else
 							echo __('no expiry', 'paypalplus'); ?></h2>
-                        <? } ?>
+                        <?php } ?>
                    
                     <?php $pack_n = 0; $bonus_n = 0;
                         foreach($packs as $pack) { $pack_n++; ?>
                         <div>
                             <h3><?php echo sprintf(__('Credit pack #%d', 'paypalplus'), $pack_n); ?></h3>
                             <div style="float:left;width:200px"><label><?php _e("Price", "paypalplus");?>:</label> <?php echo $pack." ".osc_get_preference('currency', 'paypalplus'); ?>
-                            <? if (osc_get_preference("allow_bonus", "paypalplus")=='1') { 
+                            <?php if (osc_get_preference("allow_bonus", "paypalplus")=='1') { 
 									if ($bonusamount=='0' || $bonusamount==null) {?>
                             <br /><strong><? echo __('Get','paypalplus').' '.$bonus[$bonus_n]. '% '. __('Free Bonus!','paypalplus'); ?>*</strong>
-                            	<?  } else $morecredit='1'; 
+                            	<?php  } else $morecredit='1'; 
 								$bonus_n++; }
 								?>
                             </div> 
@@ -73,7 +73,7 @@
                         <div style="clear:both;"></div>
                         <br/>
                     <?php } ?>
-                    <? if ($morecredit=='1') echo _e('You can get more Bonus Credit after using all you actual bonus!','paypalplus');
+                    <?php if ($morecredit=='1') echo _e('You can get more Bonus Credit after using all you actual bonus!','paypalplus');
 							else  {
 								if  (osc_get_preference("allow_bonus", "paypalplus")=='1') echo '*'.__('Bonus Credit is not cumulative.','paypalplus');
 								if (osc_get_preference("allow_bonus_expiration", "paypalplus")=='1') echo ' '.sprintf(__('Your Bonus Credit will expire in %d days','paypalplus'), osc_get_preference("bonus_days", "paypalplus") );
