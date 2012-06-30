@@ -39,8 +39,7 @@ $paypal_log = $conn->osc_dbFetchResults("SELECT * FROM %st_paypal_log", DB_TABLE
                     <td><?php echo $logs['s_concept']; ?></td>
                     <td><?php echo osc_format_date($logs['dt_date']); ?></td>
                     <td><?php echo $logs['s_code']; ?></td>
-                    <td><?php echo $logs['f_amount'];
-            echo $logs['s_currency_code']; ?></td>
+                    <td><?php echo $logs['f_amount'] . ' ' . $logs['s_currency_code']; ?></td>
                     <td><?php echo $logs['s_email']; ?></td>
                     <td><?php echo $logs['fk_i_user_id']; ?></td>
                     <td><?php echo $logs['fk_i_item_id']; ?></td>
