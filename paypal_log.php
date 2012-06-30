@@ -44,16 +44,21 @@ $paypal_log = $conn->osc_dbFetchResults("SELECT * FROM %st_paypal_log", DB_TABLE
                     <td><?php echo $logs['fk_i_user_id']; ?></td>
                     <td><?php echo $logs['fk_i_item_id']; ?></td>
                     <td><?php echo $logs['s_source']; ?></td>
-                    <td><?php
-            if ($logs['i_product_type'] == '201')
-                echo _e('Premium Ads', 'paypalplus');
-            else if ($logs['i_product_type'] == '301')
-                echo _e('PremiumPlus Ads', 'paypalplus');
-            else if ($logs['i_product_type'] == '401')
-                echo _e('Pack', 'paypalplus');
-            ?></td>
+                    <td>
+                        <?php
+                        if ($logs['i_product_type'] == '201') {
+                            echo _e('Premium Ads', 'paypalplus');
+                        } else if ($logs['i_product_type'] == '301') {
+                            echo _e('PremiumPlus Ads', 'paypalplus');
+                        } else if ($logs['i_product_type'] == '401') {
+                            echo _e('Pack', 'paypalplus');
+                        }
+                        ?>
+                    </td>
                 </tr>
-<?php } ?>
+    <?php
+}
+?>
         </tbody>
     </table>
 </div>
